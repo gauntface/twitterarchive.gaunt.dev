@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ partial "layouts/l-twitter-open.html" .}}
+
+<h1>Tweets</h1>
+
+{{ $paginator := .Paginator 25 }}
+<div class="l-twitter-list">
+{{ range $paginator.Pages }}
+
+{{ end }}
+</div>
+
+{{ partial "components/c-pagination.html" $paginator}}
+
+{{ partial "layouts/l-twitter-close.html"}}
+{{ end }}
