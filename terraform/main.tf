@@ -1,9 +1,9 @@
 variable "region" { default = "us-west-1" }
 
 locals {
-	tags = {
-		Project = "twitterarchive.gaunt.dev"
-	}
+  tags = {
+    Project = "twitterarchive.gaunt.dev"
+  }
 }
 
 terraform {
@@ -16,7 +16,7 @@ terraform {
 
   required_version = ">= 1.3.6"
 
-	backend "s3" {
+  backend "s3" {
     bucket = "gauntface-tfstate"
     key    = "gaunt.dev/twitterarchive/terraform.tfstate"
     region = "us-west-1"
