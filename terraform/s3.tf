@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "twitterarchive-bucket" {
   bucket = "twitterarchive.gaunt.dev"
-	tags = local.tags
+  tags   = local.tags
 }
 
 resource "aws_s3_bucket_acl" "twitterarchive-bucket-acl" {
