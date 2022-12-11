@@ -7,13 +7,14 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    # Get the code
     - uses: actions/checkout@v3
       with:
-        ref: main
         submodules: true
 
-    # Install dependencies
+
+    # Setup environment
+    - name: Install Terraform
+      uses: hashicorp/setup-terraform@v2
     - name: Install Go
       uses: actions/setup-go@v3
       with:
@@ -30,6 +31,11 @@ jobs:
     - name: Install NPM Deps
       run: npm install
 
+
+    - name: Lint 🌟
+      run: terraform fmt --check --diff terraform/
+
+
     # Configure AWS for genimgs and publish
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -37,14 +43,16 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-west-1
-
-    # Build it
     - name: Gen Images
       run: genimgs
-    - name: Build
+
+
+    # Build it
+    - name: Build 🔧
       env:
         VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
       run: npm run build
+
 
     # Deploy to AWS
     - name: Publish to AWS

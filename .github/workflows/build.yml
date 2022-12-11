@@ -22,9 +22,28 @@ jobs:
     # Setup environment
     - name: Install Terraform
       uses: hashicorp/setup-terraform@v2
+    - name: Install Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: '^1.16.4'
+    - name: Install Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.101.0'
+    - name: Install go-html-asset-manager
+      run: |
+        go install github.com/gauntface/go-html-asset-manager/v4/cmds/htmlassets@latest
+        go install github.com/gauntface/go-html-asset-manager/v4/cmds/genimgs@latest
+        go install github.com/tdewolff/minify/v2/cmd/minify@latest
+    - name: Install NPM Deps
+      run: npm install
 
 
     - name: Lint 🌟
       run: terraform fmt --check --diff terraform/
+
+
     - name: Build 🔧
-      run: echo "TODO..."
+      env:
+        VIMEO_TOKEN: ${{ secrets.VIMEO_TOKEN }}
+      run: npm run build
