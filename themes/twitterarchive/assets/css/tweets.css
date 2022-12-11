@@ -1,0 +1,7 @@
+.tweets {
+	display: flex;
+	flex-direction: column;
+	gap: var(--padding);
+	margin: 0;
+	padding: 0;
+}

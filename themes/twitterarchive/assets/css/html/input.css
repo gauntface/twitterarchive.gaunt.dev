@@ -1,0 +1,12 @@
+input {
+	padding: calc(0.5 * var(--padding));
+
+	border-radius: calc(0.5 * var(--padding));
+	border-color: var(--t-opposite-3);
+	border-style: solid;
+	border-width: 1px;
+}
+
+input:focus-visible {
+	outline-color: var(--t-accent-1);
+}
