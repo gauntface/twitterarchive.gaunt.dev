@@ -1,0 +1,5 @@
+.tweets-search {
+	display: inline-flex;
+	flex-direction: row;
+	gap: calc(0.5 * var(--padding));
+}

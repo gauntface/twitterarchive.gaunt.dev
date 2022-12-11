@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "build": "npm run build-hugo && npm run process-html",
+    "build-hugo": "npm run clean && hugo && rm -rf tmp && cp -r public tmp",
+    "build-quick": "npm run reset-hugo && npm run process-html",
+    "clean": "rm -rf public",
+    "process-html": "npm run html-assets && npm run minify-html",
+    "html-assets": "htmlassets --vimeo=$VIMEO_TOKEN",
+    "minify-html": "minify -r --match=\\.html -o ./public ./public/*",
+    "reset-hugo": "npm run clean && cp -r tmp public"
+  },
+  "devDependencies": {
+    "@sentry/browser": "^7.23.0",
+    "@sentry/tracing": "^7.23.0",
+    "cssnano": "^5.1.14",
+    "glob": "^8.0.3",
+    "mkdirp": "^1.0.4",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^7.8.3"
+  }
+}

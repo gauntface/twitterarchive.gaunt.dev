@@ -1,0 +1,47 @@
+{
+  "disableHugoGeneratorInject": true,
+  "markup": {
+      "goldmark": {
+        "renderer": {
+            "unsafe": true
+        }
+      },
+      "highlight": {
+        "codeFences": false
+      }
+  },
+
+  "baseURL": "https://twitterarchive.gaunt.dev/",
+  "languageCode": "en-us",
+  "title": "@gauntface's tweets",
+  "theme": ["twitterarchive", "gaunt.dev", "base-theme"],
+  "summaryLength": 45,
+  "menu": {
+    "main": [
+      {
+        "identifier": "home",
+        "name": "Home",
+        "url": "/",
+        "weight": -3
+      },
+			{
+        "identifier": "popular",
+        "name": "Popular",
+        "url": "/popular/",
+        "weight": -2
+      },
+      {
+        "identifier": "recent",
+        "name": "Recent",
+        "url": "/recent/",
+        "weight": -1
+      }
+    ]
+  },
+
+  "params": {
+      "description": "The archive of Matt Gaunt-Seo's tweets (a.k.a @gauntface).",
+      "themecolor": "#1D9BF0",
+      "socialimage": "/images/default-social.png"
+  }
+}

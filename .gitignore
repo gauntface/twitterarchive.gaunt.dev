@@ -1,1 +1,4 @@
 .terraform/
+tmp/
+static/generated/
+resources/

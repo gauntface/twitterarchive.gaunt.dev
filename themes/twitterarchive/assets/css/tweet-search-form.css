@@ -1,0 +1,13 @@
+.tweet-search-form {
+	display: none;
+	text-align: right;
+}
+
+.tweet-search-form.is-enabled {
+	display: block;
+}
+
+.tweet-search-form h2 {
+	font-size: 0.8em;
+	font-weight: normal;
+}

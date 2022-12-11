@@ -1,0 +1,6 @@
+button {
+	border: none;
+	border-radius: calc(0.5 * var(--padding));
+	background-color: var(--t-accent-1);
+	color: var(--t-opposite-3);
+}

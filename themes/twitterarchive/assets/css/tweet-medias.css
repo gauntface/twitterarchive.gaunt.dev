@@ -1,0 +1,21 @@
+.tweet-medias {
+	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+	padding: var(--padding) 0;
+	gap: var(--padding);
+}
+
+.tweet-medias a {
+	text-align: center;
+}
+
+.tweet-medias > * {
+	flex: 1 0 40%;
+}
+
+.tweet-medias img {
+	border-radius: var(--padding);
+	max-height: 500px;
+	object-fit: cover;
+}

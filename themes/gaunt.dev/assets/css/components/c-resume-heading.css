@@ -1,0 +1,8 @@
+.c-resume-heading__links {
+	list-style: none;
+	padding: 0;
+}
+
+.c-resume-heading__links li {
+	padding: var(--padding) 0;
+}
