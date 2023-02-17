@@ -1,14 +1,10 @@
 .tweet {
 	display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
   gap: calc(1.8 * var(--padding));
-  grid-template-areas:
-		"tweet-body"
-		"tweet-metadata";
-
+  grid-template:
+		"tweet-body" min-content
+		"tweet-metadata" 1fr / 1fr;
 	border-radius: var(--padding);
-
 	background: var(--t-base-3);
 	color: var(--t-opposite-3);
 	padding: calc(var(--padding) * 2);
@@ -20,7 +16,6 @@
 
 .tweet-metadata {
 	grid-area: tweet-metadata;
-
 	display: flex;
 	flex-direction: row;
 	font-style: italic;
