@@ -1,7 +1,7 @@
 .tweet {
 	display: grid;
-  gap: calc(1.8 * var(--padding));
-  grid-template:
+	gap: calc(1.8 * var(--padding));
+	grid-template:
 		"tweet-body" min-content
 		"tweet-metadata" 1fr / 1fr;
 	border-radius: var(--padding);
