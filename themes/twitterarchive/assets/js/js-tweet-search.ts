@@ -11,7 +11,7 @@ function run () {
 			return;
 		}
 
-		var tweetIdMatch = urlInput.value.match(/\/(\d+)/);
+		const tweetIdMatch = urlInput.value.match(/\/(\d+)/);
 		if (!tweetIdMatch) {
 			return;
 		}

@@ -1,7 +1,7 @@
 .tweet-medias {
 	display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
 	padding: var(--padding) 0;
 	gap: var(--padding);
 }
